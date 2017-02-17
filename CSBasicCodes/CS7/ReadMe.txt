@@ -1,0 +1,1 @@
+Anonymous method allows coder to pass block of code rather than the name of the method. Creating a anonymous method is a way to pass a code block as delegate parameter.
