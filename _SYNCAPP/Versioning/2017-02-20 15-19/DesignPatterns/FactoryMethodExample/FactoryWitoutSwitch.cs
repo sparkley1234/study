@@ -11,41 +11,41 @@ namespace FactoryExample
     //http://tutorials.jenkov.com/dependency-injection/dependency-injection-replacing-factory-patterns.html
 
     public interface IPosition
-    {
-        string Title { get; }
-    }
-
-    class Manager : IPosition
-    {
-        public string Title
         {
-            get { return "Manager"; }
+            string Title { get; }
         }
-    }
 
-    class Clerk : IPosition
-    {
-        public string Title
+        class Manager : IPosition
         {
-            get { return "Clerk"; }
+            public string Title
+            {
+                get { return "Manager"; }
+            }
         }
-    }
 
-    class Programmer : IPosition
-    {
-        public string Title
+        class Clerk : IPosition
         {
-            get { return "Programmer"; }
+            public string Title
+            {
+                get { return "Clerk"; }
+            }
         }
-    }
 
-    static class Factory
-    {
-        public static T Create<T>() where T : IPosition, new()
+        class Programmer : IPosition
         {
-            return new T();
+            public string Title
+            {
+                get { return "Programmer"; }
+            }
         }
-    }
+
+        static class Factory
+        {
+            public static T Create<T>() where T : IPosition, new()
+            {
+                return new T();
+            }
+        }
 
     class FactoryWitoutSwitch
     {
