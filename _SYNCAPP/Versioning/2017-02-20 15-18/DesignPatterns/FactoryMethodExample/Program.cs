@@ -6,45 +6,45 @@ using System.Threading.Tasks;
 using System.Data;
 
 namespace FactoryMethodExample
-{
-    // 'IProduct' Interface
-    interface IEmployee
     {
-        void details();
-    }
-
-    // 'ConcreteProduct' class
-    class PermanentEmployee : IEmployee
+        // 'IProduct' Interface
+        interface IEmployee
     {
-        public void details()
-        {
-            Console.WriteLine("This is permanent employee type object");
+            void details();
         }
-    }
-    // 'ConcreteProduct' class
-    class TemporaryEmployee : IEmployee
-    {
-        public void details()
-        {
-            Console.WriteLine("This is Temporary employee type object");
-        }
-    }
 
-    class EmployeeFactory
+        // 'ConcreteProduct' class
+        class PermanentEmployee : IEmployee
     {
-        public IEmployee Factory(Employee type)
-        {
-            switch (type)
+            public void details()
             {
-                case Employee.PermanentEmployee:
-                    return new PermanentEmployee();
-                case Employee.TemporaryEmployee:
-                    return new TemporaryEmployee();
-                default:
-                    throw new ApplicationException(string.Format("This type of employee can not be created"));
+                Console.WriteLine("This is permanent employee type object");
             }
         }
-    }
+        // 'ConcreteProduct' class
+        class TemporaryEmployee : IEmployee
+    {
+            public void details()
+            {
+                Console.WriteLine("This is Temporary employee type object");
+            }
+        }
+
+        class EmployeeFactory
+        {
+            public IEmployee Factory(Employee type)
+            {
+                switch (type)
+                {
+                    case Employee.PermanentEmployee:
+                        return new PermanentEmployee();
+                    case Employee.TemporaryEmployee:
+                        return new TemporaryEmployee();
+                    default:
+                        throw new ApplicationException(string.Format("This type of employee can not be created"));
+                }
+            }
+        }
     class EmployeeFactoryByReflection
     {
         public IEmployee Factory(Employee stype)
@@ -63,11 +63,11 @@ namespace FactoryMethodExample
                 }
                 return IF;
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 throw new ApplicationException(string.Format("This type of employee can not be created"));
 
-            }
+            }            
 
         }
     }
@@ -81,7 +81,7 @@ namespace FactoryMethodExample
     // factory method design pattern demo
     // calling class/ client
     class Program
-    {
+        {
         //static void Main(string[] args)
         //{
         //    EmployeeFactory EF = new EmployeeFactory();
