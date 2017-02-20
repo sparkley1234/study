@@ -15,7 +15,7 @@ namespace FactoryMethodExample
     }
 
     // 'ConcreteProduct' class
-    class CPermanentEmployee : IIEmployee
+    class CPermanentEmployee : IIFactory
     {
         public void details()
         {
@@ -23,7 +23,7 @@ namespace FactoryMethodExample
         }
     }
     // 'ConcreteProduct' class
-    class CTemporaryEmployee : IIEmployee
+    class CTemporaryEmployee : IIFactory
     {
         public void details()
         {
@@ -33,12 +33,12 @@ namespace FactoryMethodExample
     // 'Creator' abstract class
     abstract class CEmployeeFactory
     {
-        public abstract IIEmployee CFactory(string employeeType);
+        public abstract IIFactory CFactory(string employeeType);
     }
     // 'ConcrteCreator' class
     class CConcreteEmployeeFactory : CEmployeeFactory
     {
-        public override IIEmployee CFactory(string CemployeeType)
+        public override IIFactory CFactory(string CemployeeType)
         {
             switch (CemployeeType)
             {
