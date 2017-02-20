@@ -55,7 +55,7 @@ namespace FactoryMethodExample
     //
     class CReflectionConcreteEmployeeFactory : CEmployeeFactory
     {
-        public override IIEmployee CFactory(string CemployeeType)
+        public override IIFactory CFactory(string CemployeeType)
         {
             switch (CemployeeType)
             {
