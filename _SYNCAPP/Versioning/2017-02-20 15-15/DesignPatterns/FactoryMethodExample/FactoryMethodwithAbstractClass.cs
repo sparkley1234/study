@@ -7,8 +7,6 @@ using System.Threading.Tasks;
 namespace FactoryMethodExample
 {
     // 'IProduct' Interface
-    //
-   //It's really a matter of taste. Factory classes can be abstracted/interfaced away as necessary
     interface IIFactory
     {
         void details();
